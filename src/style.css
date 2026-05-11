@@ -492,6 +492,70 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Brands */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.brand-logo img {
+  max-width: 120px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+.brand-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Events */
+.events {
+  background: var(--bg);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-date {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.event-card h3 {
+  margin-bottom: 1rem;
+}
+
+.event-card p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Specialty Services desc */
+.service-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 992px) {
   .about-flex {
