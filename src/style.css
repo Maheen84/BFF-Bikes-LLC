@@ -419,6 +419,13 @@ section {
 }
 
 /* Instagram */
+.instagram {
+  padding: 8rem 0 10rem;
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
+}
+
 .insta-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
