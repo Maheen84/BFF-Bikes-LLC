@@ -470,18 +470,32 @@ section {
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-left: 5px;
+}
+
 .contact-form input, .contact-form textarea, .contact-form select {
-  padding: 1.2rem;
+  padding: 1rem 1.2rem;
   border-radius: 12px;
   border: 1px solid var(--glass-border);
   background: var(--bg-alt);
   color: var(--text);
   font-size: 1rem;
   transition: var(--transition);
+  width: 100%;
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
