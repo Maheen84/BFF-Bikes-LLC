@@ -466,7 +466,7 @@ section {
 
 /* Contact Form Styling */
 .contact-form {
-  padding: 3rem;
+  padding: 3rem 3rem 1.5rem 3rem;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
