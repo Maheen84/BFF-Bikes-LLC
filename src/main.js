@@ -75,7 +75,7 @@ if (contactForm) {
             btn.innerText = 'Message Sent!';
             btn.style.background = '#1ec8b0';
             contactForm.reset();
-            
+
             setTimeout(() => {
                 btn.innerText = originalText;
                 btn.style.background = '';
@@ -113,7 +113,7 @@ if (carousel) {
 
     let currentIndex = 0;
     const totalCards = cards.length;
-    
+
     function getCardsToShow() {
         if (window.innerWidth <= 768) return 1;
         if (window.innerWidth <= 992) return 2;
@@ -137,7 +137,7 @@ if (carousel) {
     function updateCarousel() {
         const cardWidth = cards[0].offsetWidth + 32; // width + gap
         carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        
+
         const dots = dotsContainer.querySelectorAll('.dot');
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
