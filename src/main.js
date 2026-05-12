@@ -1,3 +1,37 @@
+// Hero background slideshow (crossfade)
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroPrevBtn = document.getElementById('heroPrev');
+const heroNextBtn = document.getElementById('heroNext');
+if (heroSlides.length && heroPrevBtn && heroNextBtn) {
+    let heroIndex = 0;
+    const heroCount = heroSlides.length;
+    const HERO_MS = 4500;
+
+    const showHeroSlide = (i) => {
+        heroIndex = ((i % heroCount) + heroCount) % heroCount;
+        heroSlides.forEach((slide, j) => {
+            slide.classList.toggle('is-active', j === heroIndex);
+        });
+    };
+
+    const heroAdvance = () => showHeroSlide(heroIndex + 1);
+    let heroTimer = setInterval(heroAdvance, HERO_MS);
+
+    const resetHeroTimer = () => {
+        clearInterval(heroTimer);
+        heroTimer = setInterval(heroAdvance, HERO_MS);
+    };
+
+    heroPrevBtn.addEventListener('click', () => {
+        showHeroSlide(heroIndex - 1);
+        resetHeroTimer();
+    });
+    heroNextBtn.addEventListener('click', () => {
+        showHeroSlide(heroIndex + 1);
+        resetHeroTimer();
+    });
+}
+
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
@@ -54,9 +88,11 @@ if (contactForm) {
 // Mobile smooth scroll for links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const id = this.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.querySelector(id);
         if (target) {
+            e.preventDefault();
             window.scrollTo({
                 top: target.offsetTop - 80,
                 behavior: 'smooth'
